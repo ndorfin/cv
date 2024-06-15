@@ -70,7 +70,8 @@
     }
 
     body main {
-        padding-block: var(--container-padding);
+        padding-block-start: var(--container-padding);
+        padding-block-end: calc(var(--container-padding) * 3);
         background-color: var(--background-offwhite);
     }
 
@@ -90,7 +91,6 @@
     }
 
     body main article header h3 {
-        text-transform: uppercase;
         font-size: 2rem;
         line-height: 1;
         color: #999;
@@ -166,7 +166,11 @@
 
         @media (min-width: 800px) {
             body > nav {
-                padding-block: 1px;
+                padding-block-start: 1rem;
+                padding-block-end: 1px;
+                position: sticky;
+                inset-block-start: 0;
+                z-index: 2;
             }
             body > nav ul {
                 flex-direction: row;
