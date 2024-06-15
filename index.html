@@ -91,7 +91,8 @@
 
     body main article header h3 {
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 2rem;
+        line-height: 1;
         color: #999;
         font-weight: 400;
         margin: 0;
@@ -116,6 +117,15 @@
         position: absolute;
         white-space: nowrap; 
         width: 1px;
+    }
+
+    @media print {
+        body nav {
+            display: none;
+        }
+        body main article + article {
+            page-break-before: always;
+        }
     }
 </style>
 <header>
@@ -382,7 +392,6 @@
 
             #article_education ::marker {
                 content: "👨‍🎓";
-                font-size: 1.5rem;
             }
 
             #article_education li {
@@ -413,6 +422,10 @@
 
                 #article_education li {
                     margin-inline: 1rem;
+                }
+
+                #article_education ::marker {
+                    font-size: 1.5rem;
                 }
             }
         </style>
@@ -446,9 +459,13 @@
     
     <article id="article_skills" aria-labelledby="heading_skills">
         <style>
+            #article_skills li {
+                margin-block-end: 1rem;
+                padding-inline-start: 1rem;
+            }
+
             #article_skills ::marker {
                 content: "⭐";
-                font-size: 1.5rem;
             }
             @media (min-width: 800px) {
                 #article_skills ul {
@@ -456,11 +473,13 @@
                     padding-inline-start: 2rem;
                 }
                 #article_skills li {
-                    padding-inline-start: 1rem;
-                    margin-block-end: 1rem;
                     margin-inline-end: 2rem;
                 }
+                #article_skills ::marker {
+                    font-size: 1.5rem;
+                }
             }
+
         </style>
         <header>
             <h3 id="heading_skills">Skills</h3>
