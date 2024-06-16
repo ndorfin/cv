@@ -8,11 +8,9 @@
         --foreground-inverted: #fff;
         --background-inverted: #111;
         --background-default: #fff;
-        --background-offwhite: #eee;
         --link-color: #33c;
         --container-padding: 1rem;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        overflow-x: hidden;
     }
 
     @media (min-width: 800px) {
@@ -28,91 +26,7 @@
     abbr {
         text-decoration: none;
     }
-    
-    body > * {
-        padding-inline: var(--container-padding);
-        padding-block: 1px;
-        max-inline-size: 100ch;
-        margin-inline: auto;
-        position: relative;
-    }
-
-    body > *::after {
-        content: "";
-        display: block;
-        background-color: inherit;
-        inline-size: 100vw;
-        position: absolute;
-        inset-block: 0;
-        inset-inline-start: 50%;
-        margin-inline-start: -50vw;
-        z-index: -1;
-    }
-
-    body > * header > * {
-        padding-block-end: var(--container-padding);
-    }
-    
-    body > :is(header, footer, nav) {
-        background-color: var(--background-inverted);
-        color: var(--foreground-inverted);
-    }
-    
-    body > :is(header, footer, nav) a {
-        color: #aaf;
-    }
-
-    body > header {
-        padding-block: 2rem;
-    }
-
-    body > header h2 {
-        font-size: 1.25rem;
-        color: #aaa;
-        font-weight: 400;
-        margin-block-start: -1rem;
-    }
-
-    body main {
-        padding-block-start: var(--container-padding);
-        padding-block-end: calc(var(--container-padding) * 3);
-        background-color: var(--background-offwhite);
-    }
-
-    body main a {
-        color: var(--link-color);
-    }
-
-    body main article {
-        padding: var(--container-padding);
-        background-color: var(--background-default);
-    }
-
-    body main article header {
-        margin-block-start: calc(var(--container-padding) * -1);
-        margin-inline: calc(var(--container-padding) * -1);
-        background-color: var(--background-offwhite);
-    }
-
-    body main article header h3 {
-        font-size: 2rem;
-        line-height: 1;
-        color: #999;
-        font-weight: 400;
-        margin: 0;
-        padding-block-start: 3rem;
-        padding-block-end: 1rem;
-        margin-block-end: 3rem;
-    }
-
-    body main article + article {
-        margin-block-start: var(--container-padding);
-    }
-
-    body > footer {
-        padding-block-end: 3rem;
-    }
-    
+        
     .visually-hidden:not(:focus):not(:active) {
         clip: rect(0 0 0 0); 
         clip-path: inset(50%);
@@ -136,71 +50,23 @@
     <h1>Shaun O'Connell</h1>
     <h2>Lead Front-end Developer and Interaction Designer</h2>
     <p>
-        With over 22 years of relevant web development, design, and research experience,
+        With over 23 years of relevant web development, design, and research experience,
         Shaun is a valuable contributor to any web or web application development project.
         He is also a capable speaker, tutor, and advocate for the Open Web and Web Standards.
         Resilience, performance, sharing, and quality are some of Shaun's guiding principles.
     </p>
 </header>
 <nav>
-    <style>
-        body > nav {
-            padding: var(--container-padding);
-        }
-        
-        body > nav ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            list-style-type: "";
-            margin: 0;
-            padding: 0;
-            margin-block-end: -1px;
-        }
-
-        body > nav ul a {
-            display: block;
-            padding: 0.25rem 1rem;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            background-color: var(--background-offwhite);
-            color: var(--link-color);
-            font-weight: 700;
-        }
-
-        @media (min-width: 800px) {
-            body > nav {
-                padding-block-start: 1rem;
-                padding-block-end: 1px;
-                position: sticky;
-                inset-block-start: 0;
-                z-index: 2;
-            }
-            body > nav ul {
-                flex-direction: row;
-                align-items: end;
-            }
-            body > nav ul a {
-                border-radius: 0.5rem 0.5rem 0 0;
-            }
-        }
-    </style>
     <h2 class="visually-hidden">Jump to section</h2>
     <ul>
         <li>
             <a href="#article_experience">Experience</a>
         </li>
         <li>
-            <a href="#article_education">Education</a>
-        </li>
-        <li>
             <a href="#article_skills">Skills</a>
         </li>
         <li>
-            <a href="#article_projects">Projects</a>
-        </li>
-        <li>
-            <a href="#article_outside">Interests</a>
+            <a href="#article_interests">Interests</a>
         </li>
         <li>
             <a href="#footer_contact">Get in touch</a>
@@ -213,99 +79,43 @@
     </header>
 
     <article id="article_experience" aria-labelledby="heading_experience">
-        <style>
-            #article_experience > ul {
-                padding-inline-start: 1rem;
-            }
-
-            #article_experience > ul > li::marker {
-                content: "💼";
-            }
-
-            #article_experience > ul > li {
-                padding-inline-start: 1rem;
-            }
-
-            #article_experience > ul > li + li {
-                margin-block-start: 2rem;
-            }
-            
-            #article_experience h4 {
-                margin-block-end: 2rem;
-                border-block-end: #ccc solid 1px;
-                padding-block-end: 0.5rem;
-            }
-
-            #article_experience ul + h4 {
-                margin-block-start: 3rem;
-            }
-
-            #article_experience h5 {
-                margin-block: 0;
-                padding-block-start: 1rem;
-                font-weight: 400;
-                font-size: 1rem;
-            }
-            
-            #article_experience h5 b {
-                font-weight: 700;
-                font-size: 1.25rem;
-            }
-
-            #article_experience p {
-                margin-block: 0;
-            }
-
-            #article_experience :is(.date,.keywords) {
-                color: #888;
-            }
-
-            #article_experience .keywords {
-                display: none;
-            }
-
-            #article_experience .description {
-                margin-block-start: 2rem;
-                max-inline-size: 80ch;
-            }
-
-            @media (min-width: 800px) {
-                #article_experience > ul {
-                    padding-inline-start: 3rem;
-                }
-                #article_experience > ul > li::marker {
-                    font-size: 1.5rem;
-                }
-            }
-        </style>
         <header>
             <h3 id="heading_experience">Work experience</h3>
         </header>
-        <h4>Current employment:</h4>
         <ul>
             <li>
-                <h5>
+                <h4>
                     <b>Lead Front-end Developer</b> 
                     <span class="organisation">at <a href="https://tactile.co.za/">tactile.co.za</a></span>
-                </h5>
-                <p class="keywords">Current, freelance, short-term contracts, self-employed</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2007-01">January, 2007</time> to present day</p>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2007-01">January, 2007</time> to present day
+                </p>
                 <div class="description">
                     <p>
-                        Ever since 2007, I've been working as a freelance front-end developer whenever time and commitments allow.
+                       Consulting and contracting as a front-end developer, building design systems, static sites, and web applications.
                     </p>
+                    <p>
+                        I've also been developing my own UI pattern library. Examples include:
+                    </p>
+                    <ul>
+                        <li><a href="https://ndorfin.github.io/vanilla-pattern-library/">Vanilla's Pattern Library</a></li>
+                        <li><a href="https://healthnz-ult.gitlab.io/c3/fed-common-patterns/patterns/">Te Whatu Ora, UI pattern library <abbr title="proof of concept">POC</abbr></a></li>
+                        <li><a href="https://lilregie.github.io/frontend-workshop/">Lil' Regie's front-end workshop</a></li>
+                    </ul>
                 </div>
             </li>
-        </ul>
-        <h4>Previous employment:</h4>
-        <ul>
             <li>
-                <h5>
-                    <b>Technical Lead, Design Systems</b>
-                    <span class="organisation">at <a href="https://tewhatuora.govt.nz/">tewhatuora.govt.nz</a></span>
-                </h5>
-                <p class="keywords">Contract, government</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2023-07">July, 2023</time> to <time datetime="2023-11">November, 2023</time></p>
+                <h4>
+                    <b>Technical Lead, Design Systems (Contract)</b>
+                    <span class="organisation">at <a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora (Health NZ)</a></span>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2023-07">July, 2023</time> to
+                    <time datetime="2023-11">November, 2023</time>
+                </p>
                 <div class="description">
                     <p>
                         Te Whatu Ora's Data & Digital team wanted a second opinion on their fledgling Design System.
@@ -314,12 +124,15 @@
                 </div>
             </li>
             <li>
-                <h5>
+                <h4>
                     <b>Senior Front-end Developer</b>
-                    <span class="organisation">at <a href="https://ackama.com/">ackama.com</a></span>
-                </h5>
-                <p class="keywords">Full-time, agency, consultancy</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2021-10">October, 2021</time> to <time datetime="2022-06">June, 2022</time></p>
+                    <span class="organisation">at <a href="https://ackama.com/">Ackama</a></span>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2021-10">October, 2021</time> to
+                    <time datetime="2022-06">June, 2022</time>
+                </p>
                 <div class="description">
                     <p>
                         Upon returning to New Zealand, I worked on various CMS themes for non-profits, and government organisations.
@@ -327,38 +140,50 @@
                 </div>
             </li>
             <li>
-                <h5>
-                    <b>Front-end Development Teacher</b>
-                    <span class="organisation">at <a href="https://onja.org/">onja.org</a></span>
-                </h5>
-                <p class="keywords">Long-term contract, school</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2019-12">December, 2019</time> to <time datetime="2020-10">Octobner, 2020</time></p>
+                <h4>
+                    <b>Front-end Development Teacher (Contract)</b>
+                    <span class="organisation">at <a href="https://onja.org/">Onja</a></span>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2019-12">December, 2019</time> to
+                    <time datetime="2020-10">Octobner, 2020</time>
+                </p>
                 <div class="description">
                     <p>
-                        This one year contract saw me fly to Madagascar, where I helped teach 20~ students how to be front-end web developers.
+                        This one year contract saw me fly to Madagascar, where I helped teach 20 students how to be front-end web developers.
                     </p>
                 </div>
             </li>
             <li>
-                <h5>
+                <h4>
                     <b>Design Systems Developer</b>
-                    <span class="organisation">at <a href="https://flick.energy/">flick.energy</a></span>
-                </h5>
-                <p class="keywords">Full-time, product development</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2018-04">April, 2018</time> to <time datetime="2019-12">December, 2019</time></p>
+                    <span class="organisation">at <a href="https://flick.energy/">Flick Electric co.</a></span>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2018-04">April, 2018</time> to
+                    <time datetime="2019-12">December, 2019</time>
+                </p>
                 <div class="description">
                     <p>
-                        Together with Sophie Price, and Kah Ho Chan, we built Flick's Design System. This Design System was used in 7 distinct Rails front-ends, and on the company blog.
+                        Together with Sophie Price, and Kah Ho Chan, we created Flick's Design System. This Design System was used in 7 distinct Rails front-ends, and on the company blog.
                     </p>
                 </div>
             </li>
             <li>
-                <h5>
+                <h4>
                     <b>Senior Front-end Developer & Interaction Designer</b>
-                    <span class="organisation">at <a href="https://abletech.nz/">abletech.nz</a> and <a href="https://addressfinder.nz/">AddressFinder</a></span>
-                </h5>
-                <p class="keywords">Full-time, consultancy, agency, product development</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="2014-10">October, 2014</time> to <time datetime="2017-10">October, 2017</time></p>   
+                    <span class="organisation">
+                        at <a href="https://abletech.nz/">Abletech</a>
+                        and <a href="https://addressfinder.nz/">AddressFinder</a>
+                    </span>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="2014-10">October, 2014</time> to
+                    <time datetime="2017-10">October, 2017</time>
+                </p>   
                 <div class="description">
                     <p>
                         With Abletech's help, I relocated to New Zealand, where I worked on both the internal product, AddressFinder, and as a consultant for Abletech's clients.
@@ -366,129 +191,40 @@
                     <p>
                         Most of the work was in Ruby on Rails front-ends, and building complimentary pattern libraries using Middleman.
                     </p>
+                    <p>
+                        One of the highlights of my time at Abletech was working on Trade Me's design system: <a href="https://tangram.nz">Tangram</a>.
+                    </p>
                 </div>
             </li>
             <li>
-                <h5>
+                <h4>
                     <b>Senior Front-end Developer & Interaction Designer</b>
                     <span class="organisation">at various South African organisations</span>
-                </h5>
-                <p class="keywords">Full-time, product development, consultancy, agency</p>
-                <p class="date"><span class="visually-hidden">Started in </span><time datetime="1999-01">January, 1999</time> to <time datetime="2014-08">August, 2014</time></p>
+                </h4>
+                <p class="date">
+                    <span class="visually-hidden">Started in </span>
+                    <time datetime="1999-01">January, 1999</time> to
+                    <time datetime="2014-08">August, 2014</time>
+                </p>
                 <div class="description">
                     <p>
-                        I worked in South Africa for several organisations over 14 years:
+                        I worked in South Africa for several organisations over 14 years, including: 
+                        <a href="https://22seven.com">22seven</a>,
+                        <a href="https://www.linkedin.com/company/kalahari-com/?originalSubdomain=za">Kalahari.com</a>,
+                        <a href="https://yola.com">Yola</a>,
+                        <a href="https://www.careerjunction.co.za">CareerJunction</a>,
+                        <a href="https://www.linkedin.com/company/consology/?originalSubdomain=za">Consology</a>,
+                        <a href="https://oracle.com">Oracle</a>, and
+                        <a href="https://en.wikipedia.org/wiki/Dimension_Data">Dimension Data</a>.
                     </p>
-                    <ul>
-                        <li>22seven</li>
-                        <li>Kalahari.com</li>
-                        <li>Yola</li>
-                        <li>CareerJunction</li>
-                        <li>Consology, eDocs, Siebel</li>
-                        <li>Dimension Data</li>
-                    </ul>
+                    <p>At Yola, I worked with both the product and the engineering teams, doing low-fi design, and then implementing it during development.</p>
+                    <p>During my time with Consology, I was responsible for developing and theming a white-labelled self-service web application for Oracle.</p>
                 </div>
             </li>
         </ul>
     </article>
-
-    <article id="article_education" aria-labelledby="heading_education">
-        <style>
-            #article_education ul {
-                padding-inline-start: 2rem;
-            }
-
-            #article_education ::marker {
-                content: "👨‍🎓";
-            }
-
-            #article_education li {
-                padding-inline-start: 1rem;
-            }
-
-            #article_education li + li {
-                margin-block-start: 2rem;
-            }
-
-            #article_education h4 {
-                margin-block: 0;
-            }
-
-            #article_education p {
-                margin-block: 0;
-                margin-inline-start: 1rem;
-            }
-
-            #article_education .date {
-                color: #888;
-            }
-
-            @media (min-width: 800px) {
-                #article_education ul {
-                    columns: 2;
-                }
-
-                #article_education li {
-                    margin-inline: 1rem;
-                }
-
-                #article_education ::marker {
-                    font-size: 1.5rem;
-                }
-            }
-        </style>
-        <header>
-            <h3 id="heading_education">Education</h3>
-        </header>
-        <ul>
-            <li>
-                <h4>Certificate, Angular</h4>
-                <p class="supplier">at <a href="https://blog.thoughtram.io/announcements/2024/02/13/farewell.html">Thoughtram</a></p>
-                <p class="date">Completed <time datetime="2017-02">February, 2017</time></p>
-            </li>
-            <li>
-                <h4>Certificate, Visual Basic fundamentals</h4>
-                <p class="supplier">at <a href="https://torque-it.com/">Torque IT</a></p>
-                <p class="date">Completed <time datetime="1999-06">June, 1999</time></p>
-            </li>
-            <li>
-                <h4>Certificate, Programming fundamentals</h4>
-                <p class="supplier">at <a href="https://www.vzap.co.za/">Van Zyl & Pritchard</a></p>
-                <p class="date">Completed <time datetime="1998-12">December, 1998</time></p>
-            </li>
-            <li>
-                <h4>High School Certificate, with university exemption</h4>
-                <p class="supplier">at <a href="https://www.bryanston.com/">Bryanston High School</a></p>
-                <p class="date">Completed <time datetime="1997-12">December, 1997</time></p>
-            </li>
-        </ul>
-    </article>
-
     
     <article id="article_skills" aria-labelledby="heading_skills">
-        <style>
-            #article_skills li {
-                margin-block-end: 1rem;
-                padding-inline-start: 1rem;
-            }
-
-            #article_skills ::marker {
-                content: "⭐";
-            }
-            @media (min-width: 800px) {
-                #article_skills ul {
-                    columns: 2;
-                    padding-inline-start: 2rem;
-                }
-                #article_skills li {
-                    margin-inline-end: 2rem;
-                }
-                #article_skills ::marker {
-                    font-size: 1.5rem;
-                }
-            }
-
-        </style>
         <header>
             <h3 id="heading_skills">Skills</h3>
         </header>
@@ -500,52 +236,19 @@
                 <abbr title="Cascading Stylesheets">CSS</abbr>, Sass
             </li>
             <li>
-                JavaScript, Node.js
+                JavaScript, Node.js, <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers
             </li>
             <li>
                 Mentoring, training, paired-programming
             </li>
             <li>
-                Web Standards, <abbr title="Document Object Model">DOM</abbr>, Accessibility
+                Web Standards, <abbr title="Document Object Model">DOM</abbr>, Accessibility, Web Components
             </li>
             <li>
                 Design Systems, Pattern Library, and Component Library Development
             </li>
             <li>
                 Web Performance Optimisations
-            </li>
-            <li>
-                Web Components, Lit
-            </li>
-            <li>
-                <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers
-            </li>
-            <li>
-                Static Site Generators, Eleventy, Jekyll, Middleman
-            </li>
-            <li>
-                Adobe Photoshop, Illustrator, Figma, Balsamiq, Miro, SVGs
-            </li>
-            <li>
-                HTML Email Development, <abbr title="Mailjet Markup Language">MJML</abbr>
-            </li>
-            <li>
-                Headless <abbr title="Content Management System">CMS</abbr> Development
-            </li>
-            <li>
-                Ruby on Rails, Hotwire, Stimulus
-            </li>
-            <li>
-                Angular, Angular.js (ui-router)
-            </li>
-            <li>
-                Python, Django
-            </li>
-            <li>
-                Java, J2EE, Tomcat, WebLogic
-            </li>
-            <li>
-                Source Control, Git, GitHub, GitLab
             </li>
             <li>
                 User Research, Usability Testing, Surveying, <abbr title="Rapid Iterative Testing and Evaluation">RITE</abbr>
@@ -556,71 +259,15 @@
         </ul>
     </article>
 
-    <article id="article_projects" aria-labelledby="heading_projects">
+    <article id="article_interests" aria-labelledby="heading_interests">
         <header>
-            <h3 id="heading_projects">Notable projects</h3>
-        </header>
-        <p>Ask me about these - I'd love to tell you more</p>
-        <ul>
-            <li>
-                <h4>Freelance design system development</h4>
-                <p>
-                    I've been developing my own pattern library after implementing various flavours of it during freelance gigs. Examples include:
-                </p>
-                <ul>
-                    <li><a href="https://ndorfin.github.io/vanilla-pattern-library/">Vanilla's Pattern Library</a></li>
-                    <li><a href="https://healthnz-ult.gitlab.io/c3/fed-common-patterns/patterns/">Te Whatu Ora, pattern library proof of concept</a></li>
-                    <li><a href="https://lilregie.github.io/frontend-workshop/">Lil' Regie's front-end workshop</a></li>
-                </ul>
-            </li>
-            <li>
-                <h4>Design System development at Trade Me (Tangram)</h4>
-                <p>
-                    I joined Trade Me as a contract front-end developer, and worked primarily on the internal Design System called <a href="https://tangram.nz/">Tangram</a>
-                </p>
-            </li>
-            <li>
-                <h4>Design System development at Flick Electric</h4>
-                <p>
-                    Together with a full-stack dev, and two very capable designers, we built a Design System for Flick Electric's numerous online properties
-                </p>
-            </li>
-            <li>
-                <h4>Product development at Yola.com </h4>
-                <p>
-                    End-to-end design and development for this popular sitebuilder
-                </p>
-            </li>
-            <li>
-                <h4>Enterprise UI development, globally</h4>
-                <p>
-                    Customising a white-labelled UI for Siebel clients, working internationally on key e-billing and self-service software projects for clients such as:
-                </p>
-                <ul>
-                    <li>The U.S. Department of Education, Federal Student Loans project.</li>
-                    <li>Vodafone Multi-Subscriber Management, United Kingdom</li>
-                    <li>MTN Active (Self-service portal)</li>
-                </ul>
-            </li>
-            <li>
-                <h4>Y2K patching</h4>
-                <p>
-                    One of my first ever roles as a programmer was in building Y2K capability in COBOL-based systems
-                </p>
-            </li>
-        </ul>
-    </article>
-
-    <article id="article_outside" aria-labelledby="heading_outside">
-        <header>
-            <h3 id="heading_outside">Outside of work</h3>
+            <h3 id="heading_interests">Interests</h3>
         </header>
         <h4>Volunteering</h4>
         <ul>
             <li>Mentoring and tutoring in Web Development at Onja.org, WinterMentor, and as a freelancer</li>
             <li>Surveying birds at BirdLife Botswana, and a World Wildlife Fund project in the Eastern Cape, South Africa</li>
             <li>Front-of-house and behind-the-scenes work with marine species at the Two Oceans Aquarium, Cape Town</li>
-            <li>Working with the SPCA in Gaberone, Botswana</li>
         </ul>
         <h4>Gaming</h4>
         <p>
@@ -645,20 +292,6 @@
     </article>
 </main>
 <footer id="footer_contact">
-    <style>
-        body > footer {
-            padding-block-start: var(--container-padding);
-        }
-
-        body > footer > ul {
-            list-style-type: "";
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-        }
-    </style>
     <header class="visually-hidden">
         <h2>Contact me</h2>
     </header>
