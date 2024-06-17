@@ -5,12 +5,19 @@
 <title>CV - Shaun O'Connell</title>
 <style>
     html {
+        --foreground-default: #333;
         --foreground-inverted: #fff;
+        --foreground-subdued: #888;
         --background-inverted: #111;
         --background-default: #fff;
+        --line-color: #ddd;
         --link-color: #33c;
         --container-padding: 1rem;
+        
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 100%;
+        color: var(--foreground-default);
+        background-color: var(--background-default);
     }
 
     @media (min-width: 800px) {
@@ -20,11 +27,33 @@
     }
 
     body {
-        margin: 0;
+        margin-block: var(--container-padding);
+        margin-inline: var(--container-padding);
+        max-inline-size: 80ch;
+    }
+
+    article {
+        margin-block: calc(var(--container-padding) * 3);
+    }
+
+    article > header,
+    footer > header {
+        border-block-end: var(--line-color) solid 1px;
+    }
+
+    article > header > *,
+    footer > header > * {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-block-end: 0.5rem;
     }
 
     abbr {
         text-decoration: none;
+    }
+
+    a {
+        color: var(--link-color);
     }
         
     .visually-hidden:not(:focus):not(:active) {
@@ -37,18 +66,132 @@
         width: 1px;
     }
 
-    @media print {
-        body nav {
-            display: none;
+    #article_experience > ul {
+        padding: 0;
+        list-style-type: "";
+    }
+
+    #article_experience > ul > li {
+        margin-block: 3rem;
+    }
+
+    @media (min-width: 600px) {
+        html {
+            --content-gutter: 60px;
         }
-        body main article + article {
+
+        #article_experience > ul {
+            position: relative;
+        }
+
+        #article_experience > ul::before {
+            content: "";
+            position: absolute;
+            inset-block-start: 1rem;
+            inset-block-end: 2.5rem;
+            inset-inline-start: calc((var(--content-gutter) / 2) - 6px);
+            width: 1px;
+            border-inline-start: var(--line-color) solid 1px;
+        }
+
+        #article_experience > ul > li {
+            position: relative;
+            margin-inline-start: var(--content-gutter);
+        }
+
+        #article_experience > ul > li::before {
+            content: attr(data-year);
+            position: absolute;
+            inset-inline-start: calc(var(--content-gutter)* -1);
+            inset-block-start: -0.125rem;
+            text-align: center;
+            border: var(--line-color) solid 1px;
+            background-color: var(--background-default);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            display: block;
+            color: #999;
+            font-size: 0.875rem;
+        }
+    }
+
+    #article_experience .organisation {
+        font-weight: 400;
+    }
+
+    #article_experience .date {
+        color: var(--foreground-subdued);
+        margin-block-start: -1rem;
+    }
+
+    #article_skills ul {
+        margin-block: 3rem;
+    }
+
+    @media (min-width: 640px) {
+        #article_skills ul {
+            columns: 2;
+            padding-inline-start: 0;
+        }
+        #article_skills li {
+            margin-inline-start: 3rem;
+            margin-block-end: 1rem;
+        }
+    }
+
+    #article_interests dl {
+        margin-block: 3rem;
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    #article_interests dt {
+        font-weight: 700;
+        white-space: nowrap;
+        padding-inline-end: 2rem;
+        padding-block-end: 1rem;
+    }
+
+    #article_interests dd {
+        padding-block-end: 1rem;
+    }
+
+    #article_interests div {
+        display: table-row;
+    }
+
+    #article_interests div > * {
+        display: table-cell;
+    }
+
+    @media (min-width: 100ch) {
+        body {
+            margin-inline: auto;
+        }
+    }
+
+    footer > header + * {
+        margin-block: 3rem;
+    }
+
+    @media print {
+        html {
+            font-size: 14px;
+        }
+
+        #article_interests {
             page-break-before: always;
+        }
+        
+        a {
+            text-decoration: none;
         }
     }
 </style>
 <header>
     <h1>Shaun O'Connell</h1>
-    <h2>Lead Front-end Developer and Interaction Designer</h2>
+    <p><b>Lead Front-end Developer and Interaction Designer</b></p>
     <p>
         With over 23 years of relevant web development, design, and research experience,
         Shaun is a valuable contributor to any web or web application development project.
@@ -56,23 +199,6 @@
         Resilience, performance, sharing, and quality are some of Shaun's guiding principles.
     </p>
 </header>
-<nav>
-    <h2 class="visually-hidden">Jump to section</h2>
-    <ul>
-        <li>
-            <a href="#article_experience">Experience</a>
-        </li>
-        <li>
-            <a href="#article_skills">Skills</a>
-        </li>
-        <li>
-            <a href="#article_interests">Interests</a>
-        </li>
-        <li>
-            <a href="#footer_contact">Get in touch</a>
-        </li>
-    </ul>
-</nav>
 <main>
     <header>
         <h2 class="visually-hidden"><abbr title="Curriculum Vitae">CV</abbr></h2>
@@ -83,7 +209,7 @@
             <h3 id="heading_experience">Work experience</h3>
         </header>
         <ul>
-            <li>
+            <li data-year="2024">
                 <h4>
                     <b>Lead Front-end Developer</b> 
                     <span class="organisation">at <a href="https://tactile.co.za/">tactile.co.za</a></span>
@@ -106,10 +232,10 @@
                     </ul>
                 </div>
             </li>
-            <li>
+            <li data-year="2023">
                 <h4>
                     <b>Technical Lead, Design Systems (Contract)</b>
-                    <span class="organisation">at <a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora (Health NZ)</a></span>
+                    <span class="organisation">at <a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora, <span lang="en">Health <abbr title="New Zealand">NZ</abbr></span></a></span>
                 </h4>
                 <p class="date">
                     <span class="visually-hidden">Started in </span>
@@ -123,7 +249,7 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li data-year="2022">
                 <h4>
                     <b>Senior Front-end Developer</b>
                     <span class="organisation">at <a href="https://ackama.com/">Ackama</a></span>
@@ -139,7 +265,7 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li data-year="2020">
                 <h4>
                     <b>Front-end Development Teacher (Contract)</b>
                     <span class="organisation">at <a href="https://onja.org/">Onja</a></span>
@@ -155,7 +281,7 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li data-year="2019">
                 <h4>
                     <b>Design Systems Developer</b>
                     <span class="organisation">at <a href="https://flick.energy/">Flick Electric co.</a></span>
@@ -171,7 +297,7 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li data-year="2017">
                 <h4>
                     <b>Senior Front-end Developer & Interaction Designer</b>
                     <span class="organisation">
@@ -196,9 +322,9 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li data-year="2014">
                 <h4>
-                    <b>Senior Front-end Developer & Interaction Designer</b>
+                    <b>Front-end Developer & Interaction Designer</b>
                     <span class="organisation">at various South African organisations</span>
                 </h4>
                 <p class="date">
@@ -221,6 +347,12 @@
                     <p>During my time with Consology, I was responsible for developing and theming a white-labelled self-service web application for Oracle.</p>
                 </div>
             </li>
+            <li data-year="1999">
+                <h4>
+                    <b>Junior Web Developer</b>
+                </h4>
+                <p>Entered the <abbr title="Information Technology">IT</abbr> industry as a self-taught Web Developer</p>
+            </li>
         </ul>
     </article>
     
@@ -236,13 +368,13 @@
                 <abbr title="Cascading Stylesheets">CSS</abbr>, Sass
             </li>
             <li>
-                JavaScript, Node.js, <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers
+                JavaScript, Node.js, <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers, <abbr title="Document Object Model">DOM</abbr>
             </li>
             <li>
                 Mentoring, training, paired-programming
             </li>
             <li>
-                Web Standards, <abbr title="Document Object Model">DOM</abbr>, Accessibility, Web Components
+                Web Standards, Accessibility, Web Components
             </li>
             <li>
                 Design Systems, Pattern Library, and Component Library Development
@@ -263,37 +395,49 @@
         <header>
             <h3 id="heading_interests">Interests</h3>
         </header>
-        <h4>Volunteering</h4>
-        <ul>
-            <li>Mentoring and tutoring in Web Development at Onja.org, WinterMentor, and as a freelancer</li>
-            <li>Surveying birds at BirdLife Botswana, and a World Wildlife Fund project in the Eastern Cape, South Africa</li>
-            <li>Front-of-house and behind-the-scenes work with marine species at the Two Oceans Aquarium, Cape Town</li>
-        </ul>
-        <h4>Gaming</h4>
-        <p>
-            I love the intricacies, rules, and systems in modern board-games, computer games, and role-playing games such as Dungeons & Dragons.
-        </p>
-        <h4>Lego Technics</h4>
-        <p>
-            Amateur robotics and mechanical engineering with these amazing toys.
-        </p>
-        <h4>Birdwatching</h4>
-        <p>
-            I know my fair share of Southern African bird species, and am slowly building my knowledge of New Zealand species.
-        </p>
-        <h4>Photography</h4>
-        <p>
-            An amateur at best, but I love landscape, nature, macro, and long-exposure/space photography.
-        </p>
-        <h4>Aquaria</h4>
-        <p>
-            Freshwater aquarium fish keeping and aquascaping. One of my first paying jobs was as an aquarist in Johannesburg, South Africa
-        </p>
+        <dl>
+            <div>
+                <dt>Volunteering</dt>
+                <dd>
+                    I work in my spare time as a volunteer. Offering mentorship to junior web developers, as well as aiding conservation efforts.
+                </dd>
+            </div>
+            <div>
+                <dt>Gaming</dt>
+                <dd>
+                    I love the intricacies, rules, and systems in modern board-games, computer games, and role-playing games such as Dungeons & Dragons.
+                </dd>
+            </div>
+            <div>
+                <dt>Lego Technics</dt>
+                <dd>
+                    Amateur robotics and mechanical engineering with these amazing toys.
+                </dd>
+            </div>
+            <div>
+                <dt>Birdwatching</dt>
+                <dd>
+                    I know my fair share of Southern African bird species, and am slowly building my knowledge of New Zealand species.
+                </dd>
+            </div>
+            <div>
+                <dt>Photography</dt>
+                <dd>
+                    An amateur at best, but I love landscape, nature, macro, and long-exposure/space photography.
+                </dd>
+            </div>
+            <div>
+                <dt>Aquaria</dt>
+                <dd>
+                    Freshwater aquarium fish keeping and aquascaping. One of my first paying jobs was as an aquarist in Johannesburg, South Africa
+                </dd>
+            </div>
+        </dl>
     </article>
 </main>
 <footer id="footer_contact">
-    <header class="visually-hidden">
-        <h2>Contact me</h2>
+    <header>
+        <h2>Get in touch</h2>
     </header>
     <ul>
         <li>
@@ -312,4 +456,5 @@
             <a href="https://github.com/ndorfin/">GitHub: ndorfin</a>
         </li>
     </ul>
+    <p>The latest version of this CV is available online at <a href="https://ndorfin.github.io/cv">ndorfin.github.io/cv</a></p>
 </footer>
