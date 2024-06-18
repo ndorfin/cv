@@ -3,447 +3,457 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV - Shaun O'Connell</title>
+<!-- This document is valid HTML5 -->
 <style>
-    html {
-        --foreground-default: #333;
-        --foreground-inverted: #fff;
-        --foreground-subdued: #888;
-        --background-inverted: #111;
-        --background-default: #fff;
-        --line-color: #ddd;
-        --link-color: #33c;
-        --container-padding: 1rem;
-        
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 100%;
-        color: var(--foreground-default);
-        background-color: var(--background-default);
-    }
+html {
+	--foreground-default: #333;
+	--foreground-inverted: #fff;
+	--foreground-subdued: #888;
+	--background-inverted: #111;
+	--background-default: #fff;
+	--line-color: #ddd;
+	--link-color: #33c;
+	--container-padding: 1rem;
 
-    @media (min-width: 800px) {
-        html {
-            --container-padding: 2rem;
-        }
-    }
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 100%;
+	color: var(--foreground-default);
+	background-color: var(--background-default);
+}
 
-    body {
-        margin-block: var(--container-padding);
-        margin-inline: var(--container-padding);
-        max-inline-size: 80ch;
-    }
+@media (min-width: 800px) {
+	html {
+		--container-padding: 2rem;
+	}
+}
 
-    article {
-        margin-block: calc(var(--container-padding) * 3);
-    }
+body {
+	margin-block: var(--container-padding);
+	margin-inline: var(--container-padding);
+	max-inline-size: 80ch;
+}
 
-    article > header,
-    footer > header {
-        border-block-end: var(--line-color) solid 1px;
-    }
+article {
+	margin-block: calc(var(--container-padding) * 3);
+}
 
-    article > header > *,
-    footer > header > * {
-        font-size: 2rem;
-        font-weight: 400;
-        margin-block-end: 0.5rem;
-    }
+:is(article, aside) > header {
+	border-block-end: var(--line-color) solid 1px;
+}
 
-    abbr {
-        text-decoration: none;
-    }
+:is(article, aside) > header > * {
+	font-size: 2rem;
+	font-weight: 400;
+	margin-block-end: 0.5rem;
+}
 
-    a {
-        color: var(--link-color);
-    }
-        
-    .visually-hidden:not(:focus):not(:active) {
-        clip: rect(0 0 0 0); 
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap; 
-        width: 1px;
-    }
+abbr {
+	text-decoration: none;
+	cursor: help;
+}
 
-    #article_experience > ul {
-        padding: 0;
-        list-style-type: "";
-    }
+a {
+	color: var(--link-color);
+}
 
-    #article_experience > ul > li {
-        margin-block: 3rem;
-    }
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
+}
 
-    @media (min-width: 600px) {
-        html {
-            --content-gutter: 60px;
-        }
+#article_experience > ul {
+	padding: 0;
+	list-style-type: "";
+}
 
-        #article_experience > ul {
-            position: relative;
-        }
+#article_experience > ul > li {
+	margin-block: 3rem;
+}
 
-        #article_experience > ul::before {
-            content: "";
-            position: absolute;
-            inset-block-start: 1rem;
-            inset-block-end: 2.5rem;
-            inset-inline-start: calc((var(--content-gutter) / 2) - 6px);
-            width: 1px;
-            border-inline-start: var(--line-color) solid 1px;
-        }
+@media (min-width: 600px) {
+	html {
+		--content-gutter: 60px;
+	}
 
-        #article_experience > ul > li {
-            position: relative;
-            margin-inline-start: var(--content-gutter);
-        }
+	#article_experience > ul {
+		position: relative;
+	}
 
-        #article_experience > ul > li::before {
-            content: attr(data-year);
-            position: absolute;
-            inset-inline-start: calc(var(--content-gutter)* -1);
-            inset-block-start: -0.125rem;
-            text-align: center;
-            border: var(--line-color) solid 1px;
-            background-color: var(--background-default);
-            border-radius: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            display: block;
-            color: #999;
-            font-size: 0.875rem;
-        }
-    }
+	#article_experience > ul::before {
+		content: "";
+		position: absolute;
+		inset-block-start: 1rem;
+		inset-block-end: 2.5rem;
+		inset-inline-start: calc((var(--content-gutter) / 2) - 6px);
+		width: 1px;
+		border-inline-start: var(--line-color) solid 1px;
+	}
 
-    #article_experience .organisation {
-        font-weight: 400;
-    }
+	#article_experience > ul > li {
+		position: relative;
+		margin-inline-start: var(--content-gutter);
+	}
 
-    #article_experience .date {
-        color: var(--foreground-subdued);
-        margin-block-start: -1rem;
-    }
+	#article_experience > ul > li::before {
+		content: attr(data-year);
+		position: absolute;
+		inset-inline-start: calc(var(--content-gutter)* -1);
+		inset-block-start: -0.125rem;
+		text-align: center;
+		border: var(--line-color) solid 1px;
+		background-color: var(--background-default);
+		border-radius: 0.25rem;
+		padding: 0.25rem 0.5rem;
+		display: block;
+		color: #999;
+		font-size: 0.875rem;
+	}
+}
 
-    #article_skills ul {
-        margin-block: 3rem;
-    }
+#article_experience .organisation {
+	font-weight: 400;
+}
 
-    @media (min-width: 640px) {
-        #article_skills ul {
-            columns: 2;
-            padding-inline-start: 0;
-        }
-        #article_skills li {
-            margin-inline-start: 3rem;
-            margin-block-end: 1rem;
-        }
-    }
+#article_experience .date {
+	color: var(--foreground-subdued);
+	margin-block-start: -1rem;
+}
 
-    #article_interests dl {
-        margin-block: 3rem;
-        display: table;
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
+#article_skills ul {
+	margin-block: 3rem;
+}
 
-    #article_interests dt {
-        font-weight: 700;
-        white-space: nowrap;
-        padding-inline-end: 2rem;
-        padding-block-end: 1rem;
-    }
+@media (min-width: 640px) {
+	#article_skills ul {
+		columns: 2;
+		padding-inline-start: 0;
+	}
 
-    #article_interests dd {
-        padding-block-end: 1rem;
-    }
+	#article_skills li {
+		margin-inline-start: 3rem;
+		margin-block-end: 1rem;
+	}
+}
 
-    #article_interests div {
-        display: table-row;
-    }
+#article_interests dl {
+	margin-block: 3rem;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-    #article_interests div > * {
-        display: table-cell;
-    }
+#article_interests dt {
+	font-weight: 700;
+	white-space: nowrap;
+	padding-inline-end: 2rem;
+	padding-block-end: 1rem;
+}
 
-    @media (min-width: 100ch) {
-        body {
-            margin-inline: auto;
-        }
-    }
+#article_interests dd {
+	padding-block-end: 1rem;
+}
 
-    footer > header + * {
-        margin-block: 3rem;
-    }
+#article_interests div {
+	display: table-row;
+}
 
-    @media print {
-        html {
-            font-size: 14px;
-        }
+#article_interests div > * {
+	display: table-cell;
+}
 
-        #article_interests {
-            page-break-before: always;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-    }
+@media (min-width: 100ch) {
+	body {
+		margin-inline: auto;
+	}
+}
+
+aside > header + * {
+	margin-block: 3rem;
+}
+
+@media print {
+	html {
+		font-size: 14px;
+	}
+
+	#article_interests {
+		page-break-before: always;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
 </style>
 <header>
-    <h1>Shaun O'Connell</h1>
-    <p><b>Lead Front-end Developer and Interaction Designer</b></p>
-    <p>
-        With over 23 years of relevant web development, design, and research experience,
-        Shaun is a valuable contributor to any web or web application development project.
-        He is also a capable speaker, tutor, and advocate for the Open Web and Web Standards.
-        Resilience, performance, sharing, and quality are some of Shaun's guiding principles.
-    </p>
+	<h1>Shaun O'Connell</h1>
+	<p>
+		<b>Lead Front-end Developer and Interaction Designer</b><br>
+		With over 23 years of relevant web development, design, and research experience,
+		Shaun is a valuable contributor to any web or web application development project.
+		He is also a capable speaker, tutor, and advocate for the Open Web and Web Standards.
+		Resilience, performance, sharing, and quality are some of Shaun's guiding principles.
+	</p>
 </header>
 <main>
-    <header>
-        <h2 class="visually-hidden"><abbr title="Curriculum Vitae">CV</abbr></h2>
-    </header>
+	<header>
+		<h2 class="visually-hidden"><abbr title="Curriculum Vitae">CV</abbr></h2>
+	</header>
 
-    <article id="article_experience" aria-labelledby="heading_experience">
-        <header>
-            <h3 id="heading_experience">Work experience</h3>
-        </header>
-        <ul>
-            <li data-year="2024">
-                <h4>
-                    <b>Lead Front-end Developer</b> 
-                    <span class="organisation">at <a href="https://tactile.co.za/">tactile.co.za</a></span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2007-01">January, 2007</time> to present day
-                </p>
-                <div class="description">
-                    <p>
-                       Consulting and contracting as a front-end developer, building design systems, static sites, and web applications.
-                    </p>
-                    <p>
-                        I've also been developing my own UI pattern library. Examples include:
-                    </p>
-                    <ul>
-                        <li><a href="https://ndorfin.github.io/vanilla-pattern-library/">Vanilla's Pattern Library</a></li>
-                        <li><a href="https://healthnz-ult.gitlab.io/c3/fed-common-patterns/patterns/">Te Whatu Ora, UI pattern library <abbr title="proof of concept">POC</abbr></a></li>
-                        <li><a href="https://lilregie.github.io/frontend-workshop/">Lil' Regie's front-end workshop</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li data-year="2023">
-                <h4>
-                    <b>Technical Lead, Design Systems (Contract)</b>
-                    <span class="organisation">at <a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora, <span lang="en">Health <abbr title="New Zealand">NZ</abbr></span></a></span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2023-07">July, 2023</time> to
-                    <time datetime="2023-11">November, 2023</time>
-                </p>
-                <div class="description">
-                    <p>
-                        Te Whatu Ora's Data & Digital team wanted a second opinion on their fledgling Design System.
-                        They called me in to both consult on this Design System, but also help with general IT tasks.
-                    </p>
-                </div>
-            </li>
-            <li data-year="2022">
-                <h4>
-                    <b>Senior Front-end Developer</b>
-                    <span class="organisation">at <a href="https://ackama.com/">Ackama</a></span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2021-10">October, 2021</time> to
-                    <time datetime="2022-06">June, 2022</time>
-                </p>
-                <div class="description">
-                    <p>
-                        Upon returning to New Zealand, I worked on various CMS themes for non-profits, and government organisations.
-                    </p>
-                </div>
-            </li>
-            <li data-year="2020">
-                <h4>
-                    <b>Front-end Development Teacher (Contract)</b>
-                    <span class="organisation">at <a href="https://onja.org/">Onja</a></span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2019-12">December, 2019</time> to
-                    <time datetime="2020-10">October, 2020</time>
-                </p>
-                <div class="description">
-                    <p>
-                        This opportunity of a lifetime popped up, a chance to exercise my tutoring skills, and saw me fly to Madagascar, where I helped teach 20 students how to be front-end web developers.<br>
-                        Over 1 year, after only having learned English the year before, these amazingingly dedidicated students became competent developers.
-                    </p>
-                </div>
-            </li>
-            <li data-year="2019">
-                <h4>
-                    <b>Design Systems Developer</b>
-                    <span class="organisation">at <a href="https://flick.energy/">Flick Electric co.</a></span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2018-04">April, 2018</time> to
-                    <time datetime="2019-12">December, 2019</time>
-                </p>
-                <div class="description">
-                    <p>
-                        Together with Sophie Price, and Kah Ho Chan, we created Flick's Design System. This Design System was used in 7 distinct Rails front-ends, and on the company blog.
-                    </p>
-                </div>
-            </li>
-            <li data-year="2017">
-                <h4>
-                    <b>Senior Front-end Developer & Interaction Designer</b>
-                    <span class="organisation">
-                        at <a href="https://abletech.nz/">Abletech</a>
-                        and <a href="https://addressfinder.nz/">AddressFinder</a>
-                    </span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="2014-10">October, 2014</time> to
-                    <time datetime="2017-10">October, 2017</time>
-                </p>   
-                <div class="description">
-                    <p>
-                        With Abletech's help, I relocated to New Zealand, where I worked on both the internal product, AddressFinder, and as a consultant for Abletech's clients.
-                    </p>
-                    <p>
-                        Most of the work was in Ruby on Rails front-ends, and building complimentary pattern libraries using Middleman.
-                    </p>
-                    <p>
-                        One of the highlights of my time at Abletech was working on Trade Me's design system: <a href="https://tangram.nz">Tangram</a>.
-                    </p>
-                </div>
-            </li>
-            <li data-year="2014">
-                <h4>
-                    <b>Front-end Developer & Interaction Designer</b>
-                    <span class="organisation">at various South African organisations</span>
-                </h4>
-                <p class="date">
-                    <span class="visually-hidden">Started in </span>
-                    <time datetime="1999-01">January, 1999</time> to
-                    <time datetime="2014-08">August, 2014</time>
-                </p>
-                <div class="description">
-                    <p>
-                        I worked in South Africa for several organisations over 14 years, including: 
-                        <a href="https://22seven.com">22seven</a>,
-                        <a href="https://www.linkedin.com/company/kalahari-com/?originalSubdomain=za">Kalahari.com</a>,
-                        <a href="https://yola.com">Yola</a>,
-                        <a href="https://www.careerjunction.co.za">CareerJunction</a>,
-                        <a href="https://www.linkedin.com/company/consology/?originalSubdomain=za">Consology</a>,
-                        <a href="https://oracle.com">Oracle</a>, and
-                        <a href="https://en.wikipedia.org/wiki/Dimension_Data">Dimension Data</a>.
-                    </p>
-                    <p>At Yola, I worked with both the product and the engineering teams, doing low-fi design, and then implementing it during development.</p>
-                    <p>During my time with Consology, I was responsible for developing and theming a white-labelled self-service web application for Oracle.</p>
-                </div>
-            </li>
-            <li data-year="1999">
-                <h4>
-                    <b>Junior Web Developer</b>
-                </h4>
-                <p>Entered the <abbr title="Information Technology">IT</abbr> industry as a self-taught Web Developer</p>
-            </li>
-        </ul>
-    </article>
-    
-    <article id="article_skills" aria-labelledby="heading_skills">
-        <header>
-            <h3 id="heading_skills">Skills</h3>
-        </header>
-        <ul>
-            <li>
-                <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="eXtensible Markup Language">XML</abbr>, YAML, Markdown
-            </li>
-            <li>
-                <abbr title="Cascading Stylesheets">CSS</abbr>, Sass
-            </li>
-            <li>
-                JavaScript, Node.js, <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers, <abbr title="Document Object Model">DOM</abbr>
-            </li>
-            <li>
-                Mentoring, training, paired-programming
-            </li>
-            <li>
-                Web Standards, Accessibility, Web Components
-            </li>
-            <li>
-                Design Systems, Pattern Library, and Component Library Development
-            </li>
-            <li>
-                Web Performance Optimisations
-            </li>
-            <li>
-                User Research, Usability Testing, Surveying, <abbr title="Rapid Iterative Testing and Evaluation">RITE</abbr>
-            </li>
-            <li>
-                Interaction Design, Wireframing, and Storyboarding
-            </li>
-        </ul>
-    </article>
+	<article id="article_experience" aria-labelledby="heading_experience">
+		<header>
+			<h3 id="heading_experience">Work experience</h3>
+		</header>
+		<ol>
+			<li data-year="2024">
+				<h4>
+					<b>Lead Front-end Developer</b> 
+					<span class="organisation">at <a href="https://tactile.co.za/">tactile.co.za</a></span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2007-01">January, 2007</time> to present day
+				</p>
+				<div class="description">
+					<p>
+						Consulting and contracting as a front-end developer, building design systems, static sites, and web applications.<br>
+						I've also been developing my own UI pattern library. Examples include:
+					</p>
+					<ul>
+						<li>
+							<a href="https://ndorfin.github.io/vanilla-pattern-library/">Vanilla's Pattern Library</a>
+						</li>
+						<li>
+							<a href="https://healthnz-ult.gitlab.io/c3/fed-common-patterns/patterns/">Te Whatu Ora, UI pattern library <abbr title="proof of concept">POC</abbr></a>
+						</li>
+						<li>
+							<a href="https://lilregie.github.io/frontend-workshop/">Lil' Regie's front-end workshop</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li data-year="2023">
+				<h4>
+					<b>Technical Lead, Design Systems (Contract)</b>
+					<span class="organisation">at <a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora, <span lang="en">Health <abbr title="New Zealand">NZ</abbr></span></a></span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2023-07">July, 2023</time> to
+					<time datetime="2023-11">November, 2023</time>
+				</p>
+				<div class="description">
+					<p>
+						Te Whatu Ora's Data & Digital team wanted a second opinion on their fledgling Design System.
+						They called me in to both consult on this Design System, but also help with general development tasks.
+					</p>
+				</div>
+			</li>
+			<li data-year="2022">
+				<h4>
+					<b>Senior Front-end Developer</b>
+					<span class="organisation">at <a href="https://ackama.com/">Ackama</a></span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2021-10">October, 2021</time> to
+					<time datetime="2022-06">June, 2022</time>
+				</p>
+				<div class="description">
+					<p>
+						Upon returning to New Zealand, I wanted to continue working in a socially-conscious way, so I joined Ackama.
+						I worked on various <abbr title="Cntent Management System">CMS</abbr> themes for non-profits, and government organisations.
+					</p>
+				</div>
+			</li>
+			<li data-year="2020">
+				<h4>
+					<b>Front-end Development Teacher (Volunteer, Contract)</b>
+					<span class="organisation">at <a href="https://onja.org/">Onja</a></span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2019-12">December, 2019</time> to
+					<time datetime="2020-10">October, 2020</time>
+				</p>
+				<div class="description">
+					<p>
+						This opportunity was a chance to exercise my tutoring skills and do something meaningful: enrich the lives of 20 students.
+						So, in early 2020, I fly to Madagascar, and worked on delivering a custom curriculum in Git, Bash, web development, and later specialising in front-end development.<br>
+						The students, having never touched a computer before, (and having only learned entry-level English the year prior) flourished.
+						It felt truly meaningful to be a contributor in their progress.<br>
+						Feel free to <a href="https://tactile.co.za/blog/2020-01-01/new-beginnings.html">read more about this adventure on my blog</a>.
+					</p>
+				</div>
+			</li>
+			<li data-year="2019">
+				<h4>
+					<b>Design Systems Developer</b>
+					<span class="organisation">at <a href="https://flick.energy/">Flick Electric co.</a></span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2018-04">April, 2018</time> to
+					<time datetime="2019-12">December, 2019</time>
+				</p>
+				<div class="description">
+					<p>
+						After contract web performance optimisations for Flick were completed, I had an opportunity to join the Product team.
+						Here, we created Flick's Design System, maintaining consistency and reliability in the web-based UI.<br>
+						This Design System was used in seven distinct Rails front-ends, and on the company blog.
+					</p>
+				</div>
+			</li>
+			<li data-year="2017">
+				<h4>
+					<b>Senior Front-end Developer & Interaction Designer</b>
+					<span class="organisation">
+						at <a href="https://abletech.nz/">Abletech</a>
+						and <a href="https://addressfinder.nz/">AddressFinder</a>
+					</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2014-10">October, 2014</time> to
+					<time datetime="2017-10">October, 2017</time>
+				</p>   
+				<div class="description">
+					<p>
+						With Abletech's help, I relocated to New Zealand, where I worked on both the internal product, AddressFinder, and as a consultant for Abletech's clients.<br>
+						Most of the work was in Ruby on Rails front-ends, and building complimentary pattern libraries using Middleman.
+					</p>
+					<p>
+						One of the highlights of my time at Abletech was working on Trade Me's design system: <a href="https://tangram.nz">Tangram</a>.
+					</p>
+				</div>
+			</li>
+			<li data-year="2014">
+				<h4>
+					<b>Front-end Developer & Interaction Designer</b>
+					<span class="organisation">at various South African organisations</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="1999-01">January, 1999</time> to
+					<time datetime="2014-08">August, 2014</time>
+				</p>
+				<div class="description">
+					<p>
+						After a 4-month course in COBOL, I worked at <a href="https://en.wikipedia.org/wiki/Dimension_Data">Dimension Data</a>.<br>
+						It wasn't until I joined the web development division that I felt like I had found my niche.
+					</p>
+					<p>
+						I then worked in South Africa for several other organisations over 11 years, including: 
+						<a href="https://22seven.com">22seven</a>,
+						<a href="https://www.linkedin.com/company/kalahari-com/?originalSubdomain=za">Kalahari.com</a>,
+						<a href="https://yola.com">Yola</a>,
+						<a href="https://www.careerjunction.co.za">CareerJunction</a>.
+					</p>
+					<p>At Yola, I worked with both the product and the engineering teams, doing low-fi design, and then implementing it during development.</p>
+					<p>During my time with <a href="https://www.linkedin.com/company/consology/?originalSubdomain=za">Consology</a>, I was responsible for developing and theming a white-labelled self-service web application for <a href="https://oracle.com">Oracle</a>.</p>
+				</div>
+			</li>
+			<li data-year="1998">
+				<h4>
+					<b>Junior Web Developer</b>
+				</h4>
+				<p>My career started with "Sam's Teach Yourself HTML 3", I started making websites in 1998 shortly thereafter.</p>
+			</li>
+		</ol>
+	</article>
 
-    <article id="article_interests" aria-labelledby="heading_interests">
-        <header>
-            <h3 id="heading_interests">Interests</h3>
-        </header>
-        <dl>
-            <div>
-                <dt>Volunteering</dt>
-                <dd>
-                    I work in my spare time as a volunteer. Offering mentorship to junior web developers, as well as aiding conservation efforts.
-                </dd>
-            </div>
-            <div>
-                <dt>Gaming</dt>
-                <dd>
-                    I love the intricacies, rules, and systems in modern board-games, computer games, and role-playing games such as Dungeons & Dragons.
-                </dd>
-            </div>
-            <div>
-                <dt>Lego Technics</dt>
-                <dd>
-                    Amateur robotics and mechanical engineering with these amazing toys.
-                </dd>
-            </div>
-            <div>
-                <dt>Photography</dt>
-                <dd>
-                    An amateur at best, but I love landscape, bird, macro, and long-exposure/space photography.
-                </dd>
-            </div>
-        </dl>
-    </article>
+	<article id="article_skills" aria-labelledby="heading_skills">
+	<header>
+	<h3 id="heading_skills">Skills</h3>
+	</header>
+	<ul>
+	<li>
+	<abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="eXtensible Markup Language">XML</abbr>, YAML, Markdown
+	</li>
+	<li>
+	<abbr title="Cascading Stylesheets">CSS</abbr>, Sass
+	</li>
+	<li>
+	JavaScript, Node.js, <abbr title="Progressive Web Apps">PWAs</abbr>, Service Workers, <abbr title="Document Object Model">DOM</abbr>
+	</li>
+	<li>
+	Mentoring, training, paired-programming
+	</li>
+	<li>
+	Web Standards, Accessibility, Web Components
+	</li>
+	<li>
+	Design Systems, Pattern Library, and Component Library Development
+	</li>
+	<li>
+	Web Performance Optimisations
+	</li>
+	<li>
+	User Research, Usability Testing, Surveying, <abbr title="Rapid Iterative Testing and Evaluation">RITE</abbr>
+	</li>
+	<li>
+	Interaction Design, Wireframing, and Storyboarding
+	</li>
+	</ul>
+	</article>
+
+	<article id="article_interests" aria-labelledby="heading_interests">
+	<header>
+	<h3 id="heading_interests">Interests</h3>
+	</header>
+	<dl>
+		<div>
+			<dt>Volunteering</dt>
+			<dd>
+				I work in my spare time as a volunteer. Offering mentorship to junior web developers, as well as aiding conservation efforts.
+			</dd>
+		</div>
+		<div>
+			<dt>Gaming</dt>
+			<dd>
+				I love the intricacies, rules, and systems in modern board-games, computer games, and role-playing games such as Dungeons & Dragons.
+			</dd>
+		</div>
+		<div>
+			<dt>Lego Technics</dt>
+			<dd>
+				Amateur robotics and mechanical engineering with these amazing toys.
+			</dd>
+		</div>
+		<div>
+			<dt>Photography</dt>
+			<dd>
+				An amateur at best, but I love landscape, bird, macro, and long-exposure/space photography.
+			</dd>
+		</div>
+	</dl>
+	</article>
 </main>
-<footer id="footer_contact">
-    <header>
-        <h2>Get in touch</h2>
-    </header>
-    <ul>
-        <li>
-            Visit my site: <a href="https://tactile.co.za">tactile.co.za</a>
-        </li>
-        <li>
-            Email me: <a href="mailto:shaun@tactile.co.za">shaun@tactile.co.za</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/ndorfin">LinkedIn: ndorfin</a>
-        </li>
-        <li>
-            <a href="https://www.seek.com.au/profile/shaun-oconnell-Lf39CPYdxl">SEEK: ndorfin</a>
-        </li>
-        <li>
-            <a href="https://github.com/ndorfin/">GitHub: ndorfin</a>
-        </li>
-    </ul>
-    <p>The latest version of this CV is available online at <a href="https://ndorfin.github.io/cv">ndorfin.github.io/cv</a></p>
-</footer>
+<aside id="aside_contact">
+	<header>
+		<h2>Get in touch</h2>
+	</header>
+	<ul>
+		<li>
+			Visit my site: <a href="https://tactile.co.za">tactile.co.za</a>
+		</li>
+		<li>
+			Email me: <a href="mailto:shaun@tactile.co.za">shaun@tactile.co.za</a>
+		</li>
+		<li>
+			<a href="https://www.linkedin.com/in/ndorfin">LinkedIn: ndorfin</a>
+		</li>
+		<li>
+			<a href="https://www.seek.com.au/profile/shaun-oconnell-Lf39CPYdxl">SEEK: ndorfin</a>
+		</li>
+		<li>
+			<a href="https://github.com/ndorfin/">GitHub: ndorfin</a>
+		</li>
+	</ul>
+	<p>The latest version of this CV is available online at <a href="https://ndorfin.github.io/cv">ndorfin.github.io/cv</a></p>
+</aside>
