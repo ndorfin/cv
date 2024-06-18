@@ -66,12 +66,12 @@ a {
 	width: 1px;
 }
 
-#article_experience > ul {
+#article_experience > ol {
 	padding: 0;
 	list-style-type: "";
 }
 
-#article_experience > ul > li {
+#article_experience > ol > li {
 	margin-block: 3rem;
 }
 
@@ -80,11 +80,11 @@ a {
 		--content-gutter: 60px;
 	}
 
-	#article_experience > ul {
+	#article_experience > ol {
 		position: relative;
 	}
 
-	#article_experience > ul::before {
+	#article_experience > ol::before {
 		content: "";
 		position: absolute;
 		inset-block-start: 1rem;
@@ -94,12 +94,12 @@ a {
 		border-inline-start: var(--line-color) solid 1px;
 	}
 
-	#article_experience > ul > li {
+	#article_experience > ol > li {
 		position: relative;
 		margin-inline-start: var(--content-gutter);
 	}
 
-	#article_experience > ul > li::before {
+	#article_experience > ol > li::before {
 		content: attr(data-year);
 		position: absolute;
 		inset-inline-start: calc(var(--content-gutter)* -1);
