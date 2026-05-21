@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Shaun O'Connell</title>
+<!-- This document is valid HTML5 -->
+<style>
+html {
+	--foreground-default: #333;
+	--foreground-inverted: #fff;
+	--foreground-subdued: #888;
+	--background-inverted: #111;
+	--background-default: #fff;
+	--line-color: #ddd;
+	--link-color: #33c;
+	--container-padding: 1rem;
+
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 100%;
+	line-height: 1.375;
+	color: var(--foreground-default);
+	background-color: var(--background-default);
+}
+
+@media (min-width: 800px) {
+	html {
+		--container-padding: 2rem;
+	}
+}
+
+body {
+	margin-block: var(--container-padding);
+	margin-inline: var(--container-padding);
+	max-inline-size: 80ch;
+}
+
+article {
+	margin-block: calc(var(--container-padding) * 3);
+}
+
+:is(article, aside) > header {
+	border-block-end: var(--line-color) solid 1px;
+}
+
+:is(article, aside) > header > * {
+	font-size: 2rem;
+	font-weight: 400;
+	margin-block-end: 0.5rem;
+}
+
+abbr {
+	text-decoration: none;
+	cursor: help;
+}
+
+a {
+	color: var(--link-color);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
+}
+
+#article_experience > ol {
+	padding: 0;
+	list-style-type: "";
+}
+
+#article_experience > ol > li {
+	margin-block: 3rem;
+}
+
+@media (min-width: 600px) {
+	html {
+		--content-gutter: 60px;
+	}
+
+	#article_experience > ol {
+		position: relative;
+	}
+
+	#article_experience > ol::before {
+		content: "";
+		position: absolute;
+		inset-block-start: 1rem;
+		inset-block-end: 2.5rem;
+		inset-inline-start: calc((var(--content-gutter) / 2) - 6px);
+		width: 1px;
+		border-inline-start: var(--line-color) solid 1px;
+	}
+
+	#article_experience > ol > li {
+		position: relative;
+		margin-inline-start: var(--content-gutter);
+	}
+
+	#article_experience > ol > li::before {
+		content: attr(data-year);
+		position: absolute;
+		inset-inline-start: calc(var(--content-gutter)* -1);
+		inset-block-start: -0.125rem;
+		text-align: center;
+		border: var(--line-color) solid 1px;
+		background-color: var(--background-default);
+		border-radius: 0.25rem;
+		padding: 0.25rem 0.5rem;
+		display: block;
+		color: #999;
+		font-size: 0.875rem;
+	}
+}
+
+#article_experience .organisation {
+	font-weight: 400;
+}
+
+#article_experience .date {
+	color: var(--foreground-subdued);
+	margin-block-start: -1rem;
+}
+
+#article_skills ul {
+	margin-block: 3rem;
+}
+
+@media (min-width: 640px) {
+	#article_skills ul {
+		columns: 2;
+		padding-inline-start: 0;
+	}
+
+	#article_skills li {
+		margin-inline-start: 3rem;
+		margin-block-end: 1rem;
+	}
+}
+
+#article_interests dl {
+	margin-block: 3rem;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#article_interests dt {
+	font-weight: 700;
+	white-space: nowrap;
+	padding-inline-end: 2rem;
+	padding-block-end: 1rem;
+}
+
+#article_interests dd {
+	padding-block-end: 1rem;
+}
+
+#article_interests div {
+	display: table-row;
+}
+
+#article_interests div > * {
+	display: table-cell;
+}
+
+@media (min-width: 100ch) {
+	body {
+		margin-inline: auto;
+	}
+}
+
+aside > header + * {
+	margin-block: 3rem;
+}
+
+@media print {
+	html {
+		--container-padding: 0.5rem;
+		font-size: 14px;
+		line-height: 1.125;
+	}
+
+	#article_experience > ol > li {
+		margin-block: 2rem;
+	}
+
+	#article_skills {
+		page-break-before: always;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+</style>
+<header>
+	<h1>Shaun O'Connell</h1>
+	<p>
+		<b>Aspiring field guide, nature photographer, and seasoned web developer</b>
+	</p>
+	<p>
+		While I have almost 27 years of experience as a Web Developer, I'm gradually shifting my career towards more conservation-centric roles.
+	</p>
+</header>
+<main>
+	<header>
+		<h2 class="visually-hidden"><abbr title="Curriculum Vitae">CV</abbr></h2>
+	</header>
+
+	<article id="article_experience" aria-labelledby="heading_experience">
+		<header>
+			<h3 id="heading_experience">Work experience</h3>
+		</header>
+		<ol>
+			<li data-year="2026">
+				<h4>
+					<b>Freelance Front-end Web Developer</b> 
+					<span class="organisation">at various South African organisations</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2024-08">August, 2024</time> to present day
+				</p>
+				<div class="description">
+					<p>
+						In August 2024, I returned to South Africa. During this time I worked primarily as a web developer, but I also used my spare time to improve my photography and birding skills.<br>
+						Some of the projects I worked on:
+					</p>
+					<ul>
+						<li>
+							<a href="https://ndorfin.github.io/birds-of-zevenwacht/">Birds of Zevenwacht</a>
+						</li>
+						<li>
+							<a href="https://db.crest.sun.ac.za/sasti/">SASTI @ CREST, Stellenbosch University</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li data-year="2021">
+				<h4>
+					<b>Freelance Front-end Web Developer</b>
+					<span class="organisation">at various New Zealand organisations</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2023-07">February, 2021</time> to
+					<time datetime="2023-11">July, 2024</time>
+				</p>
+				<div class="description">
+					<p>
+						Upon returning to New Zealand after COVID, I primarily worked as a freelance web developer.<br>
+						Some of my clients and employers included:
+					</p>
+					<ul>
+						<li>
+							<a href="https://tewhatuora.govt.nz/" lang="mi">Te Whatu Ora, <span lang="en">Health <abbr title="New Zealand">NZ</abbr></span></a>
+						</li>
+						<li>
+							<a href="https://ackama.com/">Ackama</a>
+						</li>
+						<li>
+							<a href="https://adminis.co.nz/">Adminis</a>
+						</li>
+						<li>
+							<a href="https://lilregie.com/">Lil Regie</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li data-year="2020">
+				<h4>
+					<b>Volunteer Web Development Teacher</b>
+					<span class="organisation">at <a href="https://onja.org/">Onja</a> Madagascar</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2019-12">December, 2019</time> to
+					<time datetime="2020-10">October, 2020</time>
+				</p>
+				<div class="description">
+					<p>
+						During 2020, I worked in Madagascar, as a volunteer teacher for 20 aspiring web development students.<br>
+						Feel free to <a href="https://tactile.co.za/blog/2020-01-01/new-beginnings.html">read more about this adventure on my blog</a>.
+					</p>
+				</div>
+			</li>
+			<li data-year="2019">
+				<h4>
+					<b>Senior Front-end Developer & Interaction Designer</b>
+					<span class="organisation">at various New Zealand organisations</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="2014-10">October, 2014</time> to
+					<time datetime="2019-12">December, 2019</time>
+				</p>   
+				<div class="description">
+					<p>
+						In October 2014, I moved to New Zealand for work.<br>
+						I worked with several organisations over the 5 years:
+					</p>
+					<ul>
+						<li>
+							<a href="https://abletech.nz/">Abletech</a> and <a href="https://addressfinder.nz">AddressFinder</a>
+						</li>
+						<li>
+							<a href="https://homes.co.nz">Homes.co.nz</a>
+						</li>
+						<li>
+							<a href="https://tangram.nz">Tangram</a> at <a href="https://trademe.co.nz">Trade Me</a>
+						</li>
+						<li>
+							<a href="https://flick.energy/">Flick Electric co.</a>
+						</li>
+					</ul>
+						
+				</div>
+			</li>
+			<li data-year="2014">
+				<h4>
+					<b>Front-end Developer & Interaction Designer</b>
+					<span class="organisation">at various South African organisations</span>
+				</h4>
+				<p class="date">
+					<span class="visually-hidden">Started in </span>
+					<time datetime="1999-01">January, 1999</time> to
+					<time datetime="2014-08">August, 2014</time>
+				</p>
+				<div class="description">
+					<p>
+						I then worked in South Africa for several organisations over 15 years, including: 
+						<a href="https://en.wikipedia.org/wiki/Dimension_Data">Dimension Data</a>,
+						<a href="https://www.linkedin.com/company/consology/?originalSubdomain=za">Consology</a>,
+						<a href="https://www.careerjunction.co.za">CareerJunction</a>.<br>
+						<a href="https://www.linkedin.com/company/kalahari-com/?originalSubdomain=za">Kalahari.com</a>,
+						<a href="https://yola.com">Yola</a>,
+						<a href="https://22seven.com">22seven</a>
+					</p>
+				</div>
+			</li>
+			<li data-year="1998">
+				<h4>
+					<b>Junior Web Developer</b>
+				</h4>
+				<p>
+					My career started in 1998 with <i><a href="https://www.goodreads.com/book/show/655802.Sams_Teach_Yourself_Html_4_in_24_Hour">Sams Teach Yourself HTML4</a></i>. I started making websites shortly thereafter.
+				</p>
+				<p>
+					Then in the August of that year, I studied programming (COBOL) at Van Zyl & Pritchard
+				</p>
+			</li>
+		</ol>
+	</article>
+
+	<article id="article_skills" aria-labelledby="heading_skills">
+		<header>
+			<h3 id="heading_skills">Skills</h3>
+		</header>
+		<h4>General skills</h4>
+		<ul>
+			<li>
+				Nature photography
+			</li>
+			<li>
+				Bird surveying and identification
+			</li>
+			<li>
+				Birding tours / guiding
+			</li>
+		</ul>
+		<h4>Tech-specific skills</h4>
+		<ul>
+			<li>
+				Web development, design systems development
+			</li>
+			<li>
+				Storyboarding, prototyping, and interaction design 
+			</li>
+			<li>
+				Usability research
+			</li>
+			<li>
+				General IT, networking, etc.
+			</li>
+		</ul>
+	</article>
+
+	<article id="article_interests" aria-labelledby="heading_interests">
+		<header>
+			<h3 id="heading_interests">Interests</h3>
+		</header>
+		<dl>
+			<div>
+				<dt>Birding & Wildlife</dt>
+				<dd>
+					Birding has been an interest for me over the last 40 years, but it wasn't until 2024 that I started prioritising my learning here.<br>
+					Take a look at my <a href="https://ebird.org/profile/NjU4MTY0MQ">eBird</a> and <a href="https://www.inaturalist.org/people/ndorfin">iNaturalist</a> profiles. I'm also a contributor to <a href="https://sabap2.birdmap.africa/"><abbr title="South African Bird Atlas Project 2">SABAP2</abbr></a>.
+				</dd>
+			</div>
+			<div>
+				<dt>Volunteering</dt>
+				<dd>
+					I work in my spare time as a volunteer. Offering mentorship to junior web developers, as well as aiding conservation efforts.
+				</dd>
+			</div>
+			<div>
+				<dt>Photography</dt>
+				<dd>
+					I'm particularly interested in Bird, wildlife, landscape, macro, and astro photography.
+				</dd>
+			</div>
+		</dl>
+	</article>
+</main>
+
+<aside id="aside_contact">
+	<header>
+		<h2>Get in touch</h2>
+	</header>
+	<ul>
+		<li>
+			Visit my site: <a href="https://tactile.co.za">tactile.co.za</a>
+		</li>
+		<li>
+			Email me: <a href="mailto:shaun@tactile.co.za">shaun@tactile.co.za</a>
+		</li>
+		<li>
+			<a href="https://www.linkedin.com/in/ndorfin">LinkedIn: ndorfin</a>
+		</li>
+		<li>
+			<a href="https://github.com/ndorfin/">GitHub: ndorfin</a>
+		</li>
+	</ul>
+	<p>The latest version of this CV is available online at <a href="https://ndorfin.github.io/cv">ndorfin.github.io/cv</a></p>
+</aside>
